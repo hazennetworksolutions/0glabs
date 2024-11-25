@@ -166,7 +166,7 @@ After=network-online.target
 
 [Service]
 User=$USER
-ExecStart=$(which cosmovisor) run start --json-rpc.api eth,txpool,personal,net,debug,web3
+ExecStart=$(which cosmovisor) run start --log_output_console
 Restart=on-failure
 RestartSec=10
 LimitNOFILE=65535
