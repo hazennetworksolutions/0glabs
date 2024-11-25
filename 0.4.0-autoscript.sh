@@ -149,6 +149,10 @@ wget -O 0gchaind https://github.com/0glabs/0g-chain/releases/download/v0.4.0/0gc
 chmod +x $HOME/0gchaind
 mkdir -p $HOME/.0gchain/cosmovisor/genesis/bin
 mv /root/0gchaind $HOME/.0gchain/cosmovisor/genesis/bin/0gchaind
+wget https://github.com/0glabs/0g-chain/releases/download/v0.4.0/0gchaind-linux-v0.4.0
+chmod +x ./0gchaind-linux-v0.4.0
+mkdir -p /root/.0gchain/cosmovisor/upgrades/v0.4.0/bin
+sudo mv ./0gchaind-linux-v0.4.0 /root/.0gchain/cosmovisor/upgrades/v0.4.0/bin/0gchaind
 sudo ln -s $HOME/.0gchain/cosmovisor/genesis $HOME/.0gchain/cosmovisor/current -f
 sudo ln -s $HOME/.0gchain/cosmovisor/current/bin/0gchaind /usr/local/bin/0gchaind -f
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.6.0
