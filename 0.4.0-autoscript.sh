@@ -182,10 +182,7 @@ sudo systemctl enable 0gchaind
 
 # Initialize the node
 printGreen "7. Initializing the node..."
-0gchaind config set client chain-id ${PRYSM_CHAIN_ID}
-0gchaind config set client keyring-backend test
-0gchaind config set client node tcp://localhost:${PRYSM_PORT}657
-0gchaind init ${MONIKER} --chain-id ${PRYSM_CHAIN_ID}
+0gchaind init ${MONIKER} --chain-id ${OG_CHAIN_ID}
 
 # Download genesis and addrbook files
 printGreen "8. Downloading genesis and addrbook..."
