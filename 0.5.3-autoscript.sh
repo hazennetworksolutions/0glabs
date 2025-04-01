@@ -69,7 +69,7 @@ function printNodeLogo {
 ████████████████████████████████████████████████████████████████████████████████████████████████████
 ████████████████████████████████████████████████████████████████████████████████████████████████████
 ████████████████████████████████████████████████████████████████████████████████████████████████████
-Hazen Network Solutions 2024 All rights reserved."
+Hazen Network Solutions 2025 All rights reserved."
     echo -e "\033[0m"
 }
 
@@ -77,7 +77,7 @@ Hazen Network Solutions 2024 All rights reserved."
 printNodeLogo
 
 # User confirmation to proceed
-echo -n "Type 'yes' to start the installation 0G Labs v0.4.0 and press Enter: "
+echo -n "Type 'yes' to start the installation 0G Labs v0.5.3 and press Enter: "
 read user_input
 
 if [[ "$user_input" != "yes" ]]; then
@@ -148,8 +148,8 @@ cd $HOME
 wget -O 0gchaind https://github.com/0glabs/0g-chain/releases/download/v0.5.3/0gchaind-linux-v0.5.3
 chmod +x $HOME/0gchaind
 mkdir -p $HOME/.0gchain/cosmovisor/genesis/bin
-mv /root/0gchaind $HOME/.0gchain/cosmovisor/genesis/bin/0gchaind
-wget 0gchaind https://github.com/0glabs/0g-chain/releases/download/v0.5.3/0gchaind-linux-v0.5.3
+mv $HOME/0gchaind $HOME/.0gchain/cosmovisor/genesis/bin/0gchaind
+wget -O 0gchaind https://github.com/0glabs/0g-chain/releases/download/v0.5.3/0gchaind-linux-v0.5.3
 chmod +x $HOME/0gchaind
 mkdir -p $HOME/.0gchain/cosmovisor/upgrades/v0.5.0/bin
 sudo mv 0gchaind $HOME/.0gchain/cosmovisor/upgrades/v0.5.0/bin/0gchaind
