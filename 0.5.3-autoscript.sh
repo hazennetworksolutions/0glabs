@@ -145,16 +145,18 @@ echo $(go version) && sleep 1
 # Download Prysm protocol binary
 printGreen "3. Downloading 0G Labs binary and setting up..." && sleep 1
 cd $HOME
-wget -O 0gchaind https://github.com/0glabs/0g-chain/releases/download/v0.4.0/0gchaind-linux-v0.4.0
+wget -O 0gchaind https://github.com/0glabs/0g-chain/releases/download/v0.5.3/0gchaind-linux-v0.5.3
 chmod +x $HOME/0gchaind
 mkdir -p $HOME/.0gchain/cosmovisor/genesis/bin
 mv /root/0gchaind $HOME/.0gchain/cosmovisor/genesis/bin/0gchaind
-wget https://github.com/0glabs/0g-chain/releases/download/v0.4.0/0gchaind-linux-v0.4.0
-chmod +x ./0gchaind-linux-v0.4.0
-mkdir -p /root/.0gchain/cosmovisor/upgrades/v0.4.0/bin
-sudo mv ./0gchaind-linux-v0.4.0 /root/.0gchain/cosmovisor/upgrades/v0.4.0/bin/0gchaind
-sudo ln -sfn $HOME/.0gchain/cosmovisor/upgrades/v0.4.0 $HOME/.0gchain/cosmovisor/current
+wget 0gchaind https://github.com/0glabs/0g-chain/releases/download/v0.5.3/0gchaind-linux-v0.5.3
+chmod +x $HOME/0gchaind
+mkdir -p $HOME/.0gchain/cosmovisor/upgrades/v0.5.0/bin
+sudo mv 0gchaind $HOME/.0gchain/cosmovisor/upgrades/v0.5.0/bin/0gchaind
+
+sudo ln -sfn $HOME/.0gchain/cosmovisor/upgrades/v0.5.0 $HOME/.0gchain/cosmovisor/current
 sudo ln -sfn $HOME/.0gchain/cosmovisor/current/bin/0gchaind /usr/local/bin/0gchaind
+
 go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.6.0
 
 # Create service file
